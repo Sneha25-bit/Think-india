@@ -48,6 +48,19 @@ h1, h2, h3, h4, .font-heading {
   background-size: 40px 40px;
 }
 
+/* Marquee Animation */
+@keyframes conclave-marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-conclave-marquee {
+  animation: conclave-marquee 40s linear infinite;
+}
 .card-orange-glass-light {
   background: rgba(255, 255, 255, 0.94);
   border: 1px solid rgba(251, 146, 60, 0.28);

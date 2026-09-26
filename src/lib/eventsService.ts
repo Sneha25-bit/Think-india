@@ -7,6 +7,7 @@ import {
   addDoc,
   updateDoc,
   deleteDoc,
+  setDoc,
   Timestamp,
   query,
   where,
@@ -55,7 +56,7 @@ export interface Event {
   shortDescription: string;
   coverImageURL: string;
   imageURLs: string[];
-  type: "workshop" | "webinar" | "competition" | "talk" | "social" | "other" | string;
+  type: "workshop" | "webinar" | "competition" | "talk" | "social" | "cultural" | "other" | string;
   genre?: "tech" | "leadership" | "workshop" | "policy" | "cultural" | "research" | "general" | string;
   mode: "online" | "offline" | "hybrid" | string;
   venue: string;
@@ -66,7 +67,7 @@ export interface Event {
   endDateTime: string; // ISO format string
   registrationLink: string;
   registrationDeadline: string; // ISO format string
-  registrationType?: "external" | "internal" | "both";
+  registrationType?: "external" | "internal" | "both" | "none";
   registrationsCount?: number;
   speakerNames: string[];
   speakerDetails?: SpeakerDetail[];
@@ -155,12 +156,10 @@ export const saveDignitaries = async (items: string[]): Promise<void> => {
   if (isFirebaseConfigured()) {
     try {
       const docRef = doc(db, "settings", "events_dignitaries");
-      const snap = await getDoc(docRef);
-      if (snap.exists()) {
-        await updateDoc(docRef, { items, updatedAt: new Date().toISOString() });
-      } else {
-        await addDoc(collection(db, "settings"), { id: "events_dignitaries", items, updatedAt: new Date().toISOString() });
-      }
+      await setDoc(docRef, { 
+        items, 
+        updatedAt: new Date().toISOString() 
+      }, { merge: true });
     } catch (e) {
       console.warn("Firestore save dignitaries failed:", e);
     }

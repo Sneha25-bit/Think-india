@@ -294,7 +294,7 @@ const PageContent = ({ page, edition }: { page: PageData; edition: NewspaperEdit
       fontFamily: "'EB Garamond',Georgia,serif",
     }}
   >
-    <div style={{ flex: 1, overflowY: "auto", overflowX: "hidden", scrollbarWidth: "none", padding: "clamp(10px,1.8vw,18px) clamp(14px,2.2vw,22px) clamp(8px,1.4vw,12px)" }}>
+    <div style={{ flex: 1, overflowY: "auto", overflowX: "hidden", scrollbarWidth: "none", padding: "clamp(12px,3vw,22px)" }}>
       <Masthead edition={edition} />
 
       {/* Edition bar */}
@@ -314,12 +314,12 @@ const PageContent = ({ page, edition }: { page: PageData; edition: NewspaperEdit
       </div>
 
       {/* Headline */}
-      <h2 style={{ fontFamily: "'Playfair Display',Georgia,serif", fontWeight: 900, fontSize: "clamp(1.05rem,2.8vw,1.9rem)", color: "#1a1209", lineHeight: 1.08, whiteSpace: "pre-line", textAlign: "center", margin: "0 0 4px" }}>
+      <h2 style={{ fontFamily: "'Playfair Display',Georgia,serif", fontWeight: 900, fontSize: "clamp(1.2rem,3.5vw,1.9rem)", color: "#1a1209", lineHeight: 1.08, whiteSpace: "pre-line", textAlign: "center", margin: "0 0 4px" }}>
         {page.headline}
       </h2>
 
       {/* Deck */}
-      <p style={{ fontFamily: "'Playfair Display',Georgia,serif", fontSize: "clamp(0.6rem,1.1vw,0.8rem)", color: "#1a1209", lineHeight: 1.4, textAlign: "center", fontStyle: "italic", borderBottom: "1px solid #1a1209", paddingBottom: "7px", margin: "0 0 7px" }}>
+      <p style={{ fontFamily: "'Playfair Display',Georgia,serif", fontSize: "clamp(0.7rem,1.4vw,0.8rem)", color: "#1a1209", lineHeight: 1.4, textAlign: "center", fontStyle: "italic", borderBottom: "1px solid #1a1209", paddingBottom: "7px", margin: "0 0 7px" }}>
         {page.deck}
       </p>
       {page.authorName && (
@@ -332,24 +332,24 @@ const PageContent = ({ page, edition }: { page: PageData; edition: NewspaperEdit
       <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "12px", marginBottom: "8px" }}>
         {/* Left: text */}
         <div>
-          <p style={{ fontSize: "clamp(9px,1.05vw,10.5px)", color: "#1a1209", lineHeight: 1.62, textAlign: "justify", marginBottom: "6px" }}>
+          <p style={{ fontSize: "clamp(10px,1.4vw,10.5px)", color: "#1a1209", lineHeight: 1.62, textAlign: "justify", marginBottom: "6px" }}>
             <span style={{ fontFamily: "'Playfair Display',Georgia,serif", fontWeight: 900, fontSize: "3.4em", lineHeight: 0.7, marginTop: "0.08em", float: "left", marginRight: "3px", color: "#1a1209" }}>
               {page.dropCapLetter}
             </span>
             {page.dropCapRest}
           </p>
           {page.paragraphs.map((p, i) => (
-            <p key={i} style={{ fontSize: "clamp(9px,1.05vw,10.5px)", color: "#1a1209", lineHeight: 1.62, textAlign: "justify", marginBottom: "6px" }}>
+            <p key={i} style={{ fontSize: "clamp(10px,1.4vw,10.5px)", color: "#1a1209", lineHeight: 1.62, textAlign: "justify", marginBottom: "6px" }}>
               {p}
             </p>
           ))}
           {/* Pull quote */}
           <div style={{ borderTop: "2px solid #1a1209", borderBottom: "2px solid #1a1209", padding: "6px 4px", marginTop: "4px" }}>
             <span style={{ fontFamily: "'Playfair Display',serif", fontSize: "20px", color: "#1a1209", lineHeight: 1, display: "block" }}>"</span>
-            <p style={{ fontFamily: "'Playfair Display',Georgia,serif", fontSize: "clamp(0.58rem,1.1vw,0.76rem)", color: "#1a1209", lineHeight: 1.4, fontStyle: "italic", fontWeight: 700, margin: 0 }}>
+            <p style={{ fontFamily: "'Playfair Display',Georgia,serif", fontSize: "clamp(0.65rem,1.4vw,0.76rem)", color: "#1a1209", lineHeight: 1.4, fontStyle: "italic", fontWeight: 700, margin: 0 }}>
               {page.pullQuote.text}
             </p>
-            <p style={{ fontFamily: "'Oswald',sans-serif", fontSize: "clamp(6.5px,0.85vw,8.5px)", color: "#1a1209", marginTop: "4px", letterSpacing: "0.1em" }}>
+            <p style={{ fontFamily: "'Oswald',sans-serif", fontSize: "clamp(7px,1vw,8.5px)", color: "#1a1209", marginTop: "4px", letterSpacing: "0.1em" }}>
               {page.pullQuote.attribution}
             </p>
           </div>
@@ -377,7 +377,7 @@ const PageContent = ({ page, edition }: { page: PageData; edition: NewspaperEdit
             <h3 style={{ fontFamily: "'Oswald',sans-serif", fontSize: "clamp(6.5px,0.85vw,8.5px)", fontWeight: 600, letterSpacing: "0.18em", color: "#1a1209", marginBottom: "4px" }}>
               {col.title}
             </h3>
-            <p style={{ fontSize: "clamp(8px,0.95vw,10px)", color: "#1a1209", lineHeight: 1.55, textAlign: "justify" }}>
+            <p style={{ fontSize: "clamp(9px,1.2vw,10px)", color: "#1a1209", lineHeight: 1.55, textAlign: "justify" }}>
               {col.body}
             </p>
           </div>
@@ -660,12 +660,12 @@ export default function App() {
       <div style={{ 
         maxWidth: "1400px", 
         width: "100%", 
-        aspectRatio: "16/10",
+        aspectRatio: "auto",
         margin: "0 auto",
         perspective: "3500px", 
         perspectiveOrigin: "50% 50%",
         position: "relative",
-        minHeight: "300px"
+        minHeight: "85vh"
       }}>
         {pages.length === 0 ? (
           <div style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "center", padding: "20px", zIndex: 10 }}>
