@@ -384,22 +384,6 @@ export default function EventsPage() {
                     )}
                     
                     <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
-                    
-                    {/* Top Status Chips */}
-                    <div className="absolute top-5 left-5 flex flex-wrap gap-2.5 z-10">
-                      <span className="px-4 py-1.5 rounded-full text-xs font-black uppercase tracking-wider bg-amber-600 text-white shadow-lg flex items-center gap-1.5">
-                        <span className="w-2 h-2 rounded-full bg-white animate-pulse" />
-                        Hero Spotlight
-                      </span>
-                      <span className="px-3.5 py-1.5 rounded-full text-xs font-black uppercase tracking-wider bg-white text-zinc-900 border border-amber-200 shadow-md">
-                        {featuredEvent.type}
-                      </span>
-                      {featuredEvent.mode && (
-                        <span className="px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider bg-black/60 backdrop-blur-md text-amber-200 border border-amber-300/30 shadow-md">
-                          {featuredEvent.mode}
-                        </span>
-                      )}
-                    </div>
 
                     {/* Bottom Floating Info */}
                     <div className="absolute bottom-5 left-5 right-5 flex flex-wrap items-center justify-between gap-3 text-white z-10">
@@ -796,39 +780,6 @@ export default function EventsPage() {
                       )}
                       
                       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-
-                      {/* Format Badges */}
-                      <div className="absolute top-3.5 left-3.5 flex flex-wrap gap-1.5 z-10">
-                        <span className="px-3 py-1 text-[11px] font-black uppercase tracking-wider rounded-lg bg-amber-600 text-white shadow-md">
-                          {event.type}
-                        </span>
-                        {event.mode && (
-                          <span className="px-3 py-1 text-[11px] font-bold uppercase tracking-wider rounded-lg bg-white/95 text-zinc-900 border border-amber-200 shadow-sm">
-                            {event.mode}
-                          </span>
-                        )}
-                      </div>
-
-                      {/* Bookmark & Status Top Right */}
-                      <div className="absolute top-3.5 right-3.5 flex items-center gap-1.5 z-10">
-                        <button
-                          onClick={(e) => toggleBookmark(event.slug, e)}
-                          title={bookmarkedSlugs.includes(event.slug) ? "Remove Bookmark" : "Save Event"}
-                          className="p-1.5 rounded-xl bg-black/70 backdrop-blur-md text-amber-300 hover:text-white border border-white/20 transition-all active:scale-90"
-                        >
-                          {bookmarkedSlugs.includes(event.slug) ? (
-                            <IconBookmarkFilled size={15} className="text-amber-400" />
-                          ) : (
-                            <IconBookmark size={15} />
-                          )}
-                        </button>
-                        
-                        <span className={`px-3 py-1 text-[11px] font-black rounded-lg uppercase tracking-wider text-white shadow-sm ${
-                          isActive ? "bg-emerald-600" : "bg-zinc-800/90"
-                        }`}>
-                          {isActive ? "Live Now" : event.status}
-                        </span>
-                      </div>
 
                       {/* Bottom Date Pill */}
                       <div className="absolute bottom-3.5 left-3.5 right-3.5 flex items-center justify-between text-xs text-white font-bold z-10">

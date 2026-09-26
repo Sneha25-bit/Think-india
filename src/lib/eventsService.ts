@@ -150,19 +150,27 @@ export const getDignitaries = async (): Promise<string[]> => {
 };
 
 export const saveDignitaries = async (items: string[]): Promise<void> => {
+  // Always save to localStorage first
   if (typeof window !== "undefined") {
     localStorage.setItem(DIGNITARIES_KEY, JSON.stringify(items));
   }
+  
+  // Try to save to Firestore
   if (isFirebaseConfigured()) {
     try {
+      console.log("Attempting to save dignitaries to Firestore...", items);
       const docRef = doc(db, "settings", "events_dignitaries");
       await setDoc(docRef, { 
         items, 
         updatedAt: new Date().toISOString() 
       }, { merge: true });
+      console.log("Dignitaries saved successfully to Firestore!");
     } catch (e) {
-      console.warn("Firestore save dignitaries failed:", e);
+      console.error("Firestore save dignitaries failed:", e);
+      throw e; // Re-throw so the admin panel shows the error
     }
+  } else {
+    console.warn("Firebase not configured, saved to localStorage only");
   }
 };
 

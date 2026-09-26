@@ -158,12 +158,13 @@ export default function AdminEventsPage() {
     }
     setSavingDignitaries(true);
     try {
+      console.log("Saving dignitaries:", dignitaries);
       await saveDignitaries(dignitaries);
-      alert("Dignitaries and Partners Marquee updated successfully!");
+      alert("✅ Dignitaries and Partners Marquee updated successfully!\n\nSaved to both localStorage and Firestore database.");
       setIsDignitariesModalOpen(false);
     } catch (e) {
-      console.error(e);
-      alert("Failed to save marquee items.");
+      console.error("Error saving dignitaries:", e);
+      alert(`❌ Failed to save marquee items to Firestore.\n\nError: ${e instanceof Error ? e.message : String(e)}\n\nPlease check your Firebase configuration and console for details.`);
     } finally {
       setSavingDignitaries(false);
     }
