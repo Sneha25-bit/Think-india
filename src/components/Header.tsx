@@ -137,12 +137,12 @@ export default function Header() {
       {/* Full Screen Overlay Menu */}
       <div 
         ref={overlayRef}
-        className="fixed inset-0 bg-orange-50 z-40 flex flex-col pt-24 sm:pt-28 pb-4 sm:pb-8 px-8 sm:px-24 overflow-hidden"
+        className="fixed inset-0 bg-orange-50 z-40 flex flex-col pt-24 sm:pt-28 pb-4 sm:pb-8 px-8 sm:px-24 overflow-y-auto"
         style={{ transform: "translateY(-100%)" }}
       >
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-amber-200/20 to-transparent pointer-events-none" />
         
-        <nav className="flex flex-col max-w-4xl relative z-10">
+        <nav className="flex flex-col max-w-4xl relative z-10 mb-8">
           {navLinks.map((link) => {
             const isActive = pathname === link.href || (link.href !== "/" && pathname.startsWith(link.href));
             return (
@@ -151,7 +151,7 @@ export default function Header() {
                 href={link.href}
                 onClick={() => setIsOpen(false)}
                 onMouseEnter={handleMouseEnter}
-                className="menu-link-item text-3xl sm:text-4xl lg:text-[2.75rem] font-black tracking-tighter text-orange-950 flex font-heading w-fit group py-1"
+                className="menu-link-item text-3xl sm:text-4xl lg:text-[2.75rem] font-black tracking-tighter text-zinc-900 flex font-heading w-fit group py-1 hover:text-amber-700 transition-colors"
               >
                 {link.name.split('').map((char, index) => (
                   <span key={index} className="char inline-block transition-transform duration-500 group-hover:translate-x-2">{char}</span>
@@ -163,7 +163,7 @@ export default function Header() {
           <Link
             href="/submit-article"
             onClick={() => setIsOpen(false)}
-            className="menu-link-item text-3xl sm:text-4xl lg:text-[2.75rem] font-black tracking-tighter text-amber-700 flex font-heading w-fit group py-1"
+            className="menu-link-item text-3xl sm:text-4xl lg:text-[2.75rem] font-black tracking-tighter text-amber-700 flex font-heading w-fit group py-1 hover:text-amber-900 transition-colors"
           >
             Write an Article
           </Link>
@@ -172,13 +172,6 @@ export default function Header() {
         {/* Premium Bottom Details Section */}
         <div className="mt-auto text-orange-950 flex flex-col sm:flex-row gap-6 sm:gap-24 relative z-10 pt-8 border-t border-amber-900/10 shrink-0">
           <div>
-            <p className="text-xs tracking-widest uppercase font-black text-amber-700 mb-2 font-heading">Business Enquiry</p>
-            <div className="flex flex-col gap-1">
-              <p className="text-sm sm:text-base font-medium tracking-wide"><span className="font-black text-amber-700 mr-2">Email:</span> hello@thinkindia.org</p>
-              <p className="text-sm sm:text-base font-medium tracking-wide"><span className="font-black text-amber-700 mr-2">Phone:</span> +91 98241 82099</p>
-            </div>
-          </div>
-          <div className="hidden sm:block">
             <p className="text-xs tracking-widest uppercase font-black text-amber-700 mb-2 font-heading">Location</p>
             <p className="text-sm sm:text-base font-medium tracking-wide max-w-xs leading-relaxed">
               SVNIT Campus, Ichchhanath<br/>

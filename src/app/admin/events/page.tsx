@@ -263,7 +263,7 @@ export default function AdminEventsPage() {
     setCoverImageURL(ev.coverImageURL ?? "");
     setImageURLs(ev.imageURLs ?? []);
     
-    const standardTypes = ["workshop", "webinar", "competition", "talk", "social", "other"];
+    const standardTypes = ["workshop", "webinar", "competition", "talk", "social", "cultural", "other"];
     if (ev.type && !standardTypes.includes(ev.type)) {
       setType("__custom__");
       setCustomType(ev.type);
@@ -571,7 +571,8 @@ export default function AdminEventsPage() {
                   <option value="webinar">Webinar</option>
                   <option value="competition">Competition / Hackathon</option>
                   <option value="talk">Talk / Keynote</option>
-                  <option value="social">Social Drive</option>
+                  <option value="social">Social</option>
+                  <option value="cultural">Cultural</option>
                   <option value="other">Other</option>
                   <option value="__custom__">+ Add Custom Event Type...</option>
                 </select>
@@ -636,6 +637,7 @@ export default function AdminEventsPage() {
                   <option value="both">Internal Site + External Form</option>
                   <option value="internal">Internal Ticket Registration</option>
                   <option value="external">External Link Only</option>
+                  <option value="none">No Registration</option>
                 </select>
               </div>
             </div>
