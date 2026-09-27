@@ -53,12 +53,12 @@ export default function Home() {
       {/* Premium Minimal Hero Section */}
       <section 
         ref={heroRef}
-        className="relative min-h-[calc(100vh-68px)] h-[calc(100vh-68px)] flex flex-col justify-between py-10 sm:py-14 px-6 sm:px-12 lg:px-24 bg-transparent"
+        className="relative min-h-[calc(100vh-68px)] h-[calc(100vh-68px)] flex flex-col justify-center py-10 sm:py-14 px-6 sm:px-12 lg:px-24 bg-transparent"
       >
         <div className="max-w-7xl w-full mx-auto relative z-10 flex flex-col items-start">
           <div className="hero-element mb-6 inline-flex items-center gap-4">
             <div className="w-12 h-[1px] bg-amber-600"></div>
-            <span className="text-amber-800 font-bold tracking-[0.3em] uppercase text-xs">Think India SVNIT</span>
+            <span className="text-amber-800 font-bold tracking-[0.3em] uppercase text-sm sm:text-base">Think India SVNIT</span>
           </div>
           
           <h1 className="hero-element text-5xl sm:text-7xl lg:text-[7rem] font-black tracking-tighter text-zinc-900 leading-[0.95] font-heading max-w-5xl">
@@ -70,16 +70,79 @@ export default function Home() {
           
           <div className="hero-element mt-12 flex flex-col sm:flex-row items-start sm:items-center justify-between w-full border-t border-zinc-900/10 pt-8 gap-8">
             <p className="text-lg text-zinc-700 font-medium max-w-xl leading-relaxed">
-              A forum to bind the youth of India with nationalistic spirit and channelize creative energies towards building a stronger nation through education, innovation, and leadership.
+              A student-led organization fostering national consciousness and leadership through dialogue, policy discussions, and civic engagement—uniting India's brightest minds for nation-building.
             </p>
-            <Link
-              href="/about"
-              className="group flex items-center justify-center w-20 h-20 rounded-full bg-zinc-900 text-white hover:bg-amber-600 transition-colors duration-500 shrink-0 shadow-xl"
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300">
-                <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
-              </svg>
-            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* About Section - Introduction & Objectives */}
+      <section className="py-24 sm:py-32 px-6 sm:px-12 lg:px-24 bg-gradient-to-b from-transparent via-amber-50/50 to-amber-100/40 border-t border-amber-300/30">
+        <div className="reveal-section max-w-6xl mx-auto">
+          {/* Introduction */}
+          <div className="mb-20">
+            <span className="text-amber-600 font-black tracking-widest uppercase text-xs mb-6 block">Who We Are</span>
+            <h2 className="text-3xl sm:text-5xl font-black text-zinc-900 tracking-tight font-heading mb-8 max-w-4xl leading-tight">
+              Think India: Fostering National Consciousness & Leadership
+            </h2>
+            <p className="text-lg sm:text-xl text-zinc-700 leading-relaxed max-w-4xl">
+              Think India is a student-led organization dedicated to fostering national consciousness, leadership, and intellectual growth among youth through discussions, events, and policy-oriented activities. We bring together the best intellectual talent from premier institutions across India to foster a "Nation First" attitude—encouraging deliberation on critical national issues and proposing innovative solutions for the country.
+            </p>
+          </div>
+
+          {/* Objectives */}
+          <div>
+            <span className="text-amber-600 font-black tracking-widest uppercase text-xs mb-8 block">Our Mission</span>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+              <div className="group">
+                <div className="flex items-start gap-5">
+                  <span className="text-5xl sm:text-6xl font-black text-amber-700 group-hover:text-amber-600 transition-colors shrink-0 leading-none pt-1">01</span>
+                  <p className="text-base sm:text-lg text-zinc-900 leading-relaxed font-medium">
+                    Design sustainable development strategies for underdeveloped and rural Bharat
+                  </p>
+                </div>
+              </div>
+              <div className="group">
+                <div className="flex items-start gap-5">
+                  <span className="text-5xl sm:text-6xl font-black text-amber-700 group-hover:text-amber-600 transition-colors shrink-0 leading-none pt-1">02</span>
+                  <p className="text-base sm:text-lg text-zinc-900 leading-relaxed font-medium">
+                    Address environmental, cultural, and security needs of Bharat and the world
+                  </p>
+                </div>
+              </div>
+              <div className="group">
+                <div className="flex items-start gap-5">
+                  <span className="text-5xl sm:text-6xl font-black text-amber-700 group-hover:text-amber-600 transition-colors shrink-0 leading-none pt-1">03</span>
+                  <p className="text-base sm:text-lg text-zinc-900 leading-relaxed font-medium">
+                    Support initiatives promoting India-centric action, thought, and innovation
+                  </p>
+                </div>
+              </div>
+              <div className="group">
+                <div className="flex items-start gap-5">
+                  <span className="text-5xl sm:text-6xl font-black text-amber-700 group-hover:text-amber-600 transition-colors shrink-0 leading-none pt-1">04</span>
+                  <p className="text-base sm:text-lg text-zinc-900 leading-relaxed font-medium">
+                    Sustain India-centric activities on campus and among the intelligentsia
+                  </p>
+                </div>
+              </div>
+              <div className="group">
+                <div className="flex items-start gap-5">
+                  <span className="text-5xl sm:text-6xl font-black text-amber-700 group-hover:text-amber-600 transition-colors shrink-0 leading-none pt-1">05</span>
+                  <p className="text-base sm:text-lg text-zinc-900 leading-relaxed font-medium">
+                    Denounce terrorism, interference, and forces against our national interest
+                  </p>
+                </div>
+              </div>
+              <div className="group">
+                <div className="flex items-start gap-5">
+                  <span className="text-5xl sm:text-6xl font-black text-amber-700 group-hover:text-amber-600 transition-colors shrink-0 leading-none pt-1">06</span>
+                  <p className="text-base sm:text-lg text-zinc-900 leading-relaxed font-medium">
+                    Uphold gender justice and family values—Bharat's unique contributions to civilization
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
