@@ -85,9 +85,18 @@ export default function Footer() {
                 <IconYoutube size={20} />
               </a>
             </div>
-            <p className="text-xs text-slate-700 font-medium leading-relaxed">
+            <p className="text-xs text-slate-700 font-medium leading-relaxed mb-4">
               Stay connected with us on social media for regular updates and announcements.
             </p>
+            <Link 
+              href="/developers" 
+              className="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-xl bg-gradient-to-r from-amber-600 to-orange-500 text-white text-xs font-bold tracking-wide uppercase hover:from-amber-700 hover:to-orange-600 transition-all duration-300 shadow-md hover:shadow-lg hover:scale-105"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-4 h-4">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5" />
+              </svg>
+              Meet the Developers
+            </Link>
           </div>
 
           {/* Contact Info Column */}
